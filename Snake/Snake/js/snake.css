@@ -1,5 +1,13 @@
-﻿canvas 
-{
-    border: 1px solid black;
-    box_shadow: 5px 5px #777;
+﻿body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+canvas {
+  margin: 20px;
+  border: 1px solid black;
+  box-shadow: 5px 5px #777;
 }
