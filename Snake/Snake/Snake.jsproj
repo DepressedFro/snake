@@ -71,7 +71,13 @@
     <Content Include="js\snake.css" />
     <Content Include="js\snake.html" />
     <Content Include="js\snake.js" />
+    <Content Include="src\food.js" />
+    <Content Include="src\game.js" />
+    <Content Include="src\snake.js" />
     <None Include="Snake_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="public\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
