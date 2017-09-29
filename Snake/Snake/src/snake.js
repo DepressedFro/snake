@@ -1,48 +1,60 @@
-﻿//snake.js
+﻿// Snake.js
 
 /** @class Snake
-    the snake in a snake game
-*/
-module.exports = Snake;
-
-class Snake
-{
-    constructor(x, y, segments)
-    {
+  * The snake in a Snake game
+  */
+export default class Snake {
+    constructor(x, y, segments) {
         this.body = [];
-        for(var i = 0; i < segments; i++)
-        {
+        for(var i = 0; i < segments; i++) {
             this.body.push({
                 x: x - i,
                 y: y
             });
         }
-        this.direction = "right";
-        thissegmentSize = 15;
+        this.direction = 'right';
+        // bind class methods
+        this.update = this.update.bind(this);
+        this.render = this.render.bind(this);
     }
-    checkForConsumption(food)
-    {
+    update() {
+        var x = this.body[0].x;
+        var y = this.body[0].y;
+        switch(this.direction) {
+            case 'right':
+                x++;
+                break;
+            case 'left':
+                x--;
+                break;
+            case 'up':
+                y--;
+                break;
+            case 'down':
+                y++;
+                break;
+        }
+        // Did we smack a wall?
+        // If we move off-board, game is over
+        if(x < 0 || x > this.width || y < 0 || y > this.height) return true;
+
+        // Move the snake
+        this.body.pop();
+        this.body.unshift({x: x, y: y});
+        // Did we eat ourselves?
+        // Did we eat food?
+        // Do we need to grow?
 
     }
-    update()
-    {
-        //did we smack a wall
-        //did we eat food
-        //did we eat outselves
-        //do we need to grow
-
-    }
-    /**
-        @function render
-    */
-    render(ctx)
-    {
-        
-        this.body.forEach(function (segement) {
+    /** @function render
+      * Render the snake
+      */
+    render(ctx) {
+        this.body.forEach(function(segment) {
             ctx.save();
-            ctx.fillStyle = "green";
-            ctx.fillRect(segment.x * this.Segmentsize, segment.y * this.segmentSize, 1, 1);
+            ctx.fillStyle = 'green';
+            ctx.fillRect(segment.x,segment.y,1,1);
             ctx.restore();
-        });
+        })
     }
 }

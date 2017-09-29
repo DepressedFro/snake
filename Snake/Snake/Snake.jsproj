@@ -73,6 +73,8 @@
     <Content Include="js\snake.js" />
     <Content Include="src\food.js" />
     <Content Include="src\game.js" />
+    <Content Include="src\index.js" />
+    <Content Include="src\snake.css" />
     <Content Include="src\snake.js" />
     <None Include="Snake_TemporaryKey.pfx" />
   </ItemGroup>
